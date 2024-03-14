@@ -18,7 +18,7 @@ export const UploadIcon = () => {
   );
 };
 
-export const DownArrow = () => {
+export const DownArrow = ({ color }: { color?: string }) => {
   return (
     <svg
       width="16"
@@ -29,7 +29,7 @@ export const DownArrow = () => {
     >
       <path
         d="M11.3346 7.83203L8.00131 11.1654L4.66797 7.83203"
-        stroke="currentColor"
+        stroke={color || "currentColor"}
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Nav from "@/components/Nav";
 import DrawerContext from "@/context/DrawerContext";
+import Aside from "@/components/Aside";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,15 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col lg:flex-row">
-          <DrawerContext>
-            <Nav />
-            <div className="relative lg:w-full">
+        <DrawerContext>
+          <article className="flex items-center justify-between h-screen">
+            <Aside />
+            <section className="flex flex-col justify-between items-center overflow-hidden w-full dark:bg-[#212121] h-[100vh]">
               <Header />
-              {children}
-            </div>
-          </DrawerContext>
-        </div>
+              <main className="w-full h-full niceScroll overflow-y-auto">
+                {children}
+              </main>
+              <Footer />
+            </section>
+          </article>
+        </DrawerContext>
       </body>
     </html>
   );

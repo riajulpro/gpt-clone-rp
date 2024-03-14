@@ -26,6 +26,22 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.niceScroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.niceScroll::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.niceScroll:hover::-webkit-scrollbar-thumb {
+  background-color: #626262;
+}
+
+@layer components {
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
